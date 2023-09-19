@@ -1,26 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [counter, setcounter] = useState(15);
+  // let counter = 15;
+
+  const addvalue = () => {
+    if (counter < 20) {
+      setcounter(counter + 1);
+    }
+    console.log("Clicked", counter);
+  };
+
+  const Decreasevalue = () => {
+    if (counter > 0) {
+      setcounter(counter - 1);
+    }
+  };
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    
-    <h1>Hello World | Honey Kumar</h1>
+    <>
+      <h1>Chai aur React</h1>
+      <h2>Counter values:5</h2>
+      <button onClick={addvalue}>Increase Values{counter}</button>
+      <br />
+      <button onClick={Decreasevalue}>Decrease values{counter}</button>
+    </>
   );
 }
 
